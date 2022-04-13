@@ -1,19 +1,19 @@
 import { createTheme } from "@mui/material";
 
-declare module "@mui/material/styles" {
-    interface Theme {
-        palette: {
-            primary: {
-                main: string;
-            };
-            secondary: {
-                main: string;
-            };
-        };
-    }
-}
+// declare module "@mui/material/styles" {
+//     interface Theme {
+//         palette: {
+//             primary: {
+//                 main: string;
+//             };
+//             secondary: {
+//                 main: string;
+//             };
+//         };
+//     }
+// }
 
-const defaultTheme = createTheme({
+const theme = createTheme({
     palette: {
         primary: {
             main: "#000",
@@ -24,27 +24,27 @@ const defaultTheme = createTheme({
     },
 });
 
-const theme = {
-    ...defaultTheme,
-    components: {
-        MuiCssBaseline: {
-            styleOverrides: {
-                body: {
-                    // fontSize: 10,
-                    backgroundColor: "#00f",
-                },
-            },
-        },
-    },
+// const theme = {
+//     ...defaultTheme,
+//     components: {
+//         MuiCssBaseline: {
+//             styleOverrides: {
+//                 body: {
+//                     // fontSize: 10,
+//                     backgroundColor: "#00f",
+//                 },
+//             },
+//         },
+//     },
 
-    // overrides: {
-    //     MuiCssBaseline: {
-    //         body: {
-    //             fontSize: 10,
-    //             backgroundColor: "#000",
-    //         },
-    //     },
-    // },
-};
+// overrides: {
+//     MuiCssBaseline: {
+//         body: {
+//             fontSize: 10,
+//             backgroundColor: "#000",
+//         },
+//     },
+// },
+// };
 
 export default theme;
