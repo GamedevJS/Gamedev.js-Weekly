@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }));
 
-const Home: NextPage = () => {
+const Issues: NextPage = () => {
     const classes = useStyles();
 
     return (
@@ -28,4 +28,4 @@ const Home: NextPage = () => {
     );
 };
 
-export default Home;
+export default Issues;
