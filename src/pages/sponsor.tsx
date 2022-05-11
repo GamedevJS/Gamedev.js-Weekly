@@ -22,7 +22,7 @@ const Sponsor: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Typography className={classes.title} variant={"h1"}>
-                issues
+                sponsors
             </Typography>
         </>
     );

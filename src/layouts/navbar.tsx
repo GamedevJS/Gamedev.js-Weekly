@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
 import { makeStyles } from "@mui/styles";
-import { AppBar, Toolbar, Box, Link } from "@mui/material";
+import { AppBar, Toolbar, Grid } from "@mui/material";
 import Logo from "../assets/logo/weekly-logo.png";
+import Link from "next/link";
 import { Theme } from "@mui/system";
 import Image from "next/image";
 
@@ -11,21 +12,25 @@ const useStyles = makeStyles((theme: Theme) => ({
         backgroundColor: "#fff",
     },
     toolbar: {
-        justifyContent: "space-between",
-        margin: "0 20%",
+        margin: "0 15%",
     },
     menuItem: {
-        marginLeft: theme.spacing(5),
+        marginRight: theme.spacing(5),
+        color: "#000",
+        cursor: "pointer",
+    },
+    menuItemsWrapper: {
+        textAlign: "center",
     },
     logo: {
-        width: 150,
         display: "flex",
+        cursor: "pointer",
     },
 }));
 
 const menuItems = [
     {
-        name: "Issue",
+        name: "Issues",
         path: "/issues",
     },
     {
@@ -47,21 +52,25 @@ const menuItems = [
 ];
 
 const Navbar: NextPage = () => {
-    const classes = useStyles(0);
+    const classes = useStyles();
 
     return (
-        <AppBar position="static" className={classes.appbar}>
+        <AppBar position="static" className={classes.appbar} elevation={0}>
             <Toolbar className={classes.toolbar}>
-                <Link href={"/"} className={classes.logo}>
-                    <Image src={Logo} alt="logo" />
-                </Link>
-                <Box>
-                    {menuItems.map(({ path, name }) => (
-                        <Link href={path} key={name} className={classes.menuItem} underline={"none"}>
-                            {name}
+                <Grid container alignItems="center">
+                    <Grid item xs={2} className={classes.logo}>
+                        <Link href={"/"} passHref>
+                            <Image src={Logo} alt="logo" />
                         </Link>
-                    ))}
-                </Box>
+                    </Grid>
+                    <Grid item xs={10} className={classes.menuItemsWrapper}>
+                        {menuItems.map(({ path, name }, id) => (
+                            <Link href={path} key={id} passHref>
+                                <span className={classes.menuItem}>{name}</span>
+                            </Link>
+                        ))}
+                    </Grid>
+                </Grid>
             </Toolbar>
         </AppBar>
     );
