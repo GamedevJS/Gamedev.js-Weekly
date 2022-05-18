@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import { makeStyles } from "@mui/styles";
 import { AppBar, Toolbar, Grid } from "@mui/material";
+import clsx from "clsx";
 import Logo from "../assets/logo/weekly-logo.png";
 import Link from "next/link";
 import { Theme } from "@mui/system";
@@ -25,6 +27,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     logo: {
         display: "flex",
         cursor: "pointer",
+    },
+    activeLink: {
+        color: "#93bcd8",
     },
 }));
 
@@ -54,6 +59,8 @@ const menuItems = [
 const Navbar: NextPage = () => {
     const classes = useStyles();
 
+    const router = useRouter();
+
     return (
         <AppBar position="static" className={classes.appbar} elevation={0}>
             <Toolbar className={classes.toolbar}>
@@ -66,7 +73,13 @@ const Navbar: NextPage = () => {
                     <Grid item xs={10} className={classes.menuItemsWrapper}>
                         {menuItems.map(({ path, name }, id) => (
                             <Link href={path} key={id} passHref>
-                                <span className={classes.menuItem}>{name}</span>
+                                <span
+                                    className={clsx(
+                                        classes.menuItem,
+                                        router.pathname === path ? classes.activeLink : ""
+                                    )}>
+                                    {name}
+                                </span>
                             </Link>
                         ))}
                     </Grid>
