@@ -1,15 +1,13 @@
 import { makeStyles } from "@mui/styles";
 import { Grid, TextField, Button } from "@mui/material";
 import { Theme } from "@mui/system";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 const useStyles = makeStyles((theme: Theme) => ({
     formContainer: {
         display: "flex",
-        // flexWrap: "nowrap",
         marginTop: theme.spacing(2),
     },
-
     subBtn: {
         marginLeft: 20,
         borderRadius: 25,
@@ -21,11 +19,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }));
 
-const Form = ({ width, label }) => {
+export interface formProps {
+    width: string;
+    label: string;
+}
+
+const Form = ({ width, label }: formProps) => {
     const classes = useStyles();
     const [email, setEmail] = useState("");
 
-    const handleEmail = (e) => {
+    const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
     };
 
