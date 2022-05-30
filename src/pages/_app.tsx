@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "../theme";
 import { Footer, Navbar } from "../layouts";
+import { Projects, Newsletter } from "../components/sections";
 import useRemoveServerSideStyles from "../hooks/useRemoveServerSideStyles";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -13,6 +14,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Navbar />
             <CssBaseline />
             <Component {...pageProps} />
+            <Projects />
+            <Newsletter />
             <Footer />
         </ThemeProvider>
     );

@@ -3,7 +3,6 @@ import Head from "next/head";
 import { makeStyles } from "@mui/styles";
 import { Typography, Grid } from "@mui/material";
 import { Theme } from "@mui/system";
-import { Projects, Newsletter } from "../components/sections";
 import Form from "../components/form/form";
 import Image from "next/image";
 import Img from "../assets/images/email.jpeg";
@@ -51,8 +50,6 @@ const Home: NextPage = () => {
                     <Image src={Img} alt={"email"} width={300} height={300} />
                 </Grid>
             </Grid>
-            <Projects />
-            <Newsletter />
         </>
     );
 };
