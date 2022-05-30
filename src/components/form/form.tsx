@@ -22,9 +22,11 @@ const useStyles = makeStyles((theme: Theme) => ({
 export interface formProps {
     width: string;
     label: string;
+    borderColor: string;
+    labelColor: string;
 }
 
-const Form = ({ width, label }: formProps) => {
+const Form = ({ width, label, borderColor, labelColor }: formProps) => {
     const classes = useStyles();
     const [email, setEmail] = useState("");
 
@@ -56,9 +58,11 @@ const Form = ({ width, label }: formProps) => {
                 sx={{
                     input: {
                         backgroundColor: "#fff",
-                        borderRadius: 1,
-                        border: "1px solid #000",
-                        paddingLeft: 1,
+                        // borderRadius: 1,
+                        border: `1px solid ${borderColor}`,
+                        padding: 1.5,
+                        fontSize: 10,
+                        color: `${labelColor}`,
                     },
                 }}
             />

@@ -1,25 +1,13 @@
 import { createTheme } from "@mui/material";
 
-// declare module "@mui/material/styles" {
-//     interface Theme {
-//         palette: {
-//             primary: {
-//                 main: string;
-//             };
-//             secondary: {
-//                 main: string;
-//             };
-//         };
-//     }
-// }
-
 const theme = createTheme({
     palette: {
         primary: {
             main: "#3b4145",
         },
         secondary: {
-            main: "#f00",
+            light: "#92bcd8",
+            main: "#93bcd8",
         },
     },
 });

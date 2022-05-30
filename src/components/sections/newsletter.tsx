@@ -5,7 +5,7 @@ import Form from "../form/form";
 
 const useStyles = makeStyles((theme: Theme) => ({
     mainWrapper: {
-        backgroundColor: "lightblue",
+        backgroundColor: theme.palette.secondary.light,
         padding: "30px 0 70px 0",
     },
 }));
@@ -20,7 +20,7 @@ const Newsletter = () => {
                     {"Join our newsletter!"}
                 </Typography>
             </Grid>
-            <Form width={"45%"} label={"email address"} />
+            <Form width={"45%"} label={"email address"} borderColor={"#000"} labelColor={"#cbcbcc"} />
         </Grid>
     );
 };
