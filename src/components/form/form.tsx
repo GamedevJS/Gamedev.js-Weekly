@@ -1,7 +1,7 @@
 import { makeStyles } from "@mui/styles";
-import { Grid, TextField, Button } from "@mui/material";
+import { Grid, TextField, Button, Input } from "@mui/material";
 import { Theme } from "@mui/system";
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 
 const useStyles = makeStyles((theme: Theme) => ({
     formContainer: {
@@ -11,10 +11,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     subBtn: {
         marginLeft: 20,
         borderRadius: 25,
-        height: 42,
+        // height: 36,
         backgroundColor: "yellow",
         textTransform: "capitalize",
-        padding: "10px 30px",
+        padding: "0 30px",
         borderColor: "orange",
     },
 }));
@@ -29,6 +29,7 @@ const Form = ({ width, label }: formProps) => {
     const [email, setEmail] = useState("");
 
     const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+        e.preventDefault();
         setEmail(e.target.value);
     };
 
@@ -46,20 +47,18 @@ const Form = ({ width, label }: formProps) => {
             spacing={2}
             justifyContent={"center"}
             style={{ width: `${width}` }}>
-            <TextField
+            <Input
+                placeholder={label}
+                value={email}
                 fullWidth
-                variant="outlined"
-                label={label}
+                disableUnderline
                 onChange={handleEmail}
-                size={"small"}
                 sx={{
                     input: {
                         backgroundColor: "#fff",
                         borderRadius: 1,
                         border: "1px solid #000",
-                    },
-                    label: {
-                        color: "#ccc",
+                        paddingLeft: 1,
                     },
                 }}
             />
