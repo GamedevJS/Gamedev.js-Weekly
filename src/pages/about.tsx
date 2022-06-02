@@ -6,6 +6,13 @@ import Wrapper from "../layouts/paragraphWrapper";
 
 const useStyles = makeStyles((theme: Theme) => ({}));
 
+{
+    /* <a href={"/sponsor"} key={999}>
+                {" "}
+                {"Andrzej Mazur"}
+            </a>, */
+}
+
 const aboutInfo = [
     {
         title: "About",

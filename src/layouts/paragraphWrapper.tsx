@@ -26,31 +26,48 @@ const useStyles = makeStyles((theme: Theme) => ({
 export interface WrapperProps {
     titlePage?: string;
     data: Array<DataProps>;
+    children?: React.ReactNode;
 }
 
 export interface DataProps {
-    title: string;
+    title?: string;
+    subtitle?: string;
     description1: string;
     description2?: string;
+    description3?: string;
 }
 
-const Wrapper = ({ data, titlePage }: WrapperProps) => {
+const Wrapper = ({ data, titlePage, children }: WrapperProps) => {
     const classes = useStyles();
 
     return (
         <Grid container className={classes.mainWrapper} rowSpacing={4}>
             <Grid item xs={10}>
-                {data?.map(({ title, description1, description2 }: DataProps) => (
+                {data?.map(({ title, description1, description2, description3, subtitle }: DataProps) => (
                     <Box key={title} mb={2}>
-                        <Typography
-                            className={clsx(classes.title, title === `${titlePage}` && classes.titleMargin)}
-                            variant={title === `${titlePage}` ? "h5" : "h6"}>
-                            {title}
-                        </Typography>
+                        {!!title && (
+                            <Typography
+                                className={clsx(classes.title, title === `${titlePage}` && classes.titleMargin)}
+                                variant={title === `${titlePage}` ? "h5" : "h6"}>
+                                {title}
+                            </Typography>
+                        )}
+
+                        {!!subtitle && (
+                            <Typography variant="body1" style={{ fontWeight: "bold" }}>
+                                {subtitle}
+                            </Typography>
+                        )}
                         <Typography variant={"body1"}>{description1}</Typography>
+                        {children}
                         {!!description2 && (
                             <Typography variant={"body1"} mt={2}>
                                 {description2}
+                            </Typography>
+                        )}
+                        {!!description3 && (
+                            <Typography variant={"body1"} mt={2}>
+                                {description3}
                             </Typography>
                         )}
                     </Box>
