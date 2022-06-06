@@ -10,6 +10,9 @@ const theme = createTheme({
             main: "#93bcd8",
         },
     },
+    typography: {
+        fontFamily: "Merriweather Sans, sans-serif",
+    },
 });
 
 // const theme = {
