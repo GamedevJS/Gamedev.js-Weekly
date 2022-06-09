@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     toolbar: {
         margin: "0 15%",
+        padding: 0,
     },
     menuItem: {
         marginRight: theme.spacing(5),
@@ -27,6 +28,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     logo: {
         display: "flex",
         cursor: "pointer",
+        width: "40%",
     },
     activeLink: {
         color: "#93bcd8",
@@ -65,12 +67,12 @@ const Navbar: NextPage = () => {
         <AppBar position="static" className={classes.appbar} elevation={0}>
             <Toolbar className={classes.toolbar}>
                 <Grid container alignItems="center">
-                    <Grid item xs={2} className={classes.logo}>
+                    <Grid item xs={2.5} className={classes.logo}>
                         <Link href={"/"} passHref>
                             <Image src={Logo} alt="logo" />
                         </Link>
                     </Grid>
-                    <Grid item xs={10} className={classes.menuItemsWrapper}>
+                    <Grid item xs={9.5} className={classes.menuItemsWrapper}>
                         {menuItems.map(({ path, name }, id) => (
                             <Link href={path} key={id} passHref>
                                 <span
