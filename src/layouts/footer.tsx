@@ -6,14 +6,24 @@ import { Theme } from "@mui/system";
 const useStyles = makeStyles((theme: Theme) => ({
     wrapper: {
         height: 40,
-        backgroundColor: "#000",
+        backgroundColor: "#252525",
         display: "flex",
         alignItems: "center",
+        [theme.breakpoints.down("sm")]: {
+            flexDirection: "column",
+            height: "20vh",
+        },
     },
     footerItem: {
         display: "flex",
         justifyContent: "center",
-        color: "#666",
+        color: "#8c8c8c",
+        "&:first-child": {
+            [theme.breakpoints.down("sm")]: {
+                alignItems: "flex-end",
+                paddingBottom: 10,
+            },
+        },
     },
 }));
 
@@ -22,7 +32,12 @@ const Footer: NextPage = () => {
 
     return (
         <Grid container className={classes.wrapper}>
-            <Grid item xs={6} className={classes.footerItem}>
+            <Grid
+                item
+                xs={6}
+                className={classes.footerItem}
+                // sx={{ alignItems: { xs: "flex-end" }, paddingBottom: { sm: 1 } }}
+            >
                 <Typography variant={"caption"}>contact@gamedevjsweekly.com</Typography>
             </Grid>
             <Grid item xs={6} className={classes.footerItem}>

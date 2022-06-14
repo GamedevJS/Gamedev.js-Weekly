@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     mainWrapper: {
         margin: "0 15%",
         width: "auto",
+        [theme.breakpoints.down("sm")]: {
+            paddingTop: "10vh",
+        },
     },
     description: {
         margin: "25px 0",
