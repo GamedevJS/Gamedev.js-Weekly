@@ -13,6 +13,17 @@ const theme = createTheme({
     typography: {
         fontFamily: "Merriweather Sans, sans-serif",
     },
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                body: {
+                    // fontSize: 10,
+                    padding: 0,
+                    margin: 0,
+                },
+            },
+        },
+    },
 });
 
 // default breakpoints:

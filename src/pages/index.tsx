@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { makeStyles } from "@mui/styles";
-import { Typography, Grid } from "@mui/material";
+import { Typography, Grid, Hidden } from "@mui/material";
 import { Theme } from "@mui/system";
 import Form from "../components/form/form";
 import Image from "next/image";
@@ -13,7 +13,18 @@ const useStyles = makeStyles((theme: Theme) => ({
         width: "auto",
         [theme.breakpoints.down("sm")]: {
             paddingTop: "10vh",
+            margin: "0 5%",
+            flexDirection: "column",
         },
+    },
+    infoWrapper: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        // "& :nth-child(3)": {
+        //     backgroundColor: "green",
+        //     width: "100%",
+        // },
     },
     description: {
         margin: "25px 0",
@@ -33,14 +44,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Grid container className={classes.mainWrapper} rowSpacing={4}>
-                <Grid
-                    item
-                    xs={6}
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}>
+                <Grid item xs={12} md={6} className={classes.infoWrapper}>
                     <Typography variant="h4">{"Weekly newsletter about HTML5 Game Development"}</Typography>
                     <Typography variant="subtitle1" className={classes.description}>
                         {
@@ -49,9 +53,17 @@ const Home: NextPage = () => {
                     </Typography>
                     <Form label={"sample@email.com"} width={"75%"} borderColor={"orange"} labelColor={"#000"} />
                 </Grid>
-                <Grid item xs={6} style={{ display: "flex" }} justifyContent={"center"} alignItems={"center"}>
-                    <Image src={Img} alt={"email"} width={300} height={300} />
-                </Grid>
+                <Hidden mdDown>
+                    <Grid
+                        item
+                        xs={12}
+                        md={6}
+                        style={{ display: "flex" }}
+                        justifyContent={"center"}
+                        alignItems={"center"}>
+                        <Image src={Img} alt={"email"} width={300} height={300} />
+                    </Grid>
+                </Hidden>
             </Grid>
         </>
     );

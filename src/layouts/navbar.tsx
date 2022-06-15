@@ -55,10 +55,14 @@ const useStyles = makeStyles((theme: Theme) => ({
         // justifyContent: "space-around",
         alignItems: "start",
         // opacity: 0,
+        // width: "100vw",
         // width: "50vw",
         // [theme.breakpoints.down("sm")]: {
         //     width: "100vw",
         border: "none",
+        // [theme.breakpoints.down("md")]: {
+        //     height: "calc(90vh - 40px)",
+        // },
         // },
     },
     modal: {
@@ -72,8 +76,11 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: "flex",
         flexDirection: "column",
         height: "70vh",
-        width: "100vw",
+        width: "100%",
         padding: "0 30px",
+        [theme.breakpoints.down("md")]: {
+            height: "calc(90vh - 40px)",
+        },
     },
     mobileMenuItems: {
         margin: 0,
@@ -120,7 +127,7 @@ const Navbar: NextPage = () => {
                 <Grid container alignItems="center" justifyContent="space-between">
                     <Grid item xs={6} md={2.5} className={classes.logo} onClick={onOpenMenu}>
                         <Link href={"/"} passHref>
-                            <Image src={Logo} alt="logo" />
+                            <Image src={Logo} alt="logo" width={200} height={50} />
                         </Link>
                     </Grid>
                     <Hidden mdDown>
@@ -139,7 +146,7 @@ const Navbar: NextPage = () => {
                         </Grid>
                     </Hidden>
                     <Hidden mdUp>
-                        <Grid item xs={2} md={9.5}>
+                        <Grid item xs={2} md={9.5} textAlign="end">
                             <IconButton style={{ color: "#000" }} onClick={onOpenMenu}>
                                 {open ? <CloseIcon fontSize={"large"} /> : <DragHandleIcon fontSize={"large"} />}
                             </IconButton>

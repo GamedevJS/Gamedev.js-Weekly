@@ -1,5 +1,5 @@
 import { makeStyles } from "@mui/styles";
-import { Grid, TextField, Button, Input } from "@mui/material";
+import { Grid, Box, Button, Input } from "@mui/material";
 import { Theme } from "@mui/system";
 import { useState } from "react";
 
@@ -7,6 +7,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     formContainer: {
         display: "flex",
         marginTop: theme.spacing(2),
+        // [theme.breakpoints.down("sm")]: {
+        //     flexDirection: "column",
+        //     // justifyContent: "center",
+        //     backgroundColor: "red",
+        //     width: " 100vw",
+        //     // alignItems: "center",
+        // },
     },
     subBtn: {
         marginLeft: 20,
@@ -16,6 +23,10 @@ const useStyles = makeStyles((theme: Theme) => ({
         textTransform: "capitalize",
         padding: "0 30px",
         borderColor: "orange",
+        // [theme.breakpoints.down("sm")]: {
+        //     margin: "20px 0",
+        //     padding: "10px 0",
+        // },
     },
 }));
 
@@ -41,6 +52,7 @@ const Form = ({ width, label, borderColor, labelColor }: formProps) => {
     };
 
     return (
+        // <Box>
         <Grid
             container
             item
@@ -54,11 +66,14 @@ const Form = ({ width, label, borderColor, labelColor }: formProps) => {
                 value={email}
                 fullWidth
                 disableUnderline
+                size="medium"
                 onChange={handleEmail}
+                // style={{ width: `${width}` }}
                 sx={{
                     input: {
                         backgroundColor: "#fff",
                         // borderRadius: 1,
+
                         border: `1px solid ${borderColor}`,
                         padding: 1.5,
                         fontSize: 10,
@@ -70,6 +85,7 @@ const Form = ({ width, label, borderColor, labelColor }: formProps) => {
                 {"Subscribe"}
             </Button>
         </Grid>
+        // {/* </Box> */}
     );
 };
 

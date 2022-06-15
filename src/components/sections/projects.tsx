@@ -7,12 +7,23 @@ import RandomImg from "../../assets/images/randomIMG.jpeg";
 const useStyles = makeStyles((theme: Theme) => ({
     mainWrapper: {
         margin: "0 15%",
+        [theme.breakpoints.down("sm")]: {
+            paddingTop: "10vh",
+            margin: "0 5%",
+            flexDirection: "column",
+            alignItems: "center",
+        },
     },
     projectContainer: {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        [theme.breakpoints.down("sm")]: {
+            textAlign: "center",
+            marginBottom: 45,
+            // flexWrap: "nowrap",
+        },
     },
     projetName: {
         textTransform: "uppercase",
@@ -47,9 +58,9 @@ const Projects = () => {
                     {"Our other projects"}
                 </Typography>
             </Grid>
-            <Grid container item className={classes.mainWrapper} justifyContent="space-between">
+            <Grid container item className={classes.mainWrapper} xs={12} justifyContent="space-between">
                 {projetsInfo.map(({ name, href, img }) => (
-                    <Grid item xs={3} className={classes.projectContainer} key={name}>
+                    <Grid item sm={3} className={classes.projectContainer} key={name}>
                         <Link href={href}>
                             <Image src={img} alt={name} />
                         </Link>
