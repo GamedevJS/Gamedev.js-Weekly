@@ -7,6 +7,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     mainWrapper: {
         margin: "0 15%",
         width: "auto",
+        [theme.breakpoints.down("sm")]: {
+            paddingTop: "10vh",
+            margin: "0 5%",
+        },
     },
     contactBtn: {
         borderRadius: 25,
@@ -42,7 +46,7 @@ const Wrapper = ({ data, titlePage, children }: WrapperProps) => {
 
     return (
         <Grid container className={classes.mainWrapper} rowSpacing={4}>
-            <Grid item xs={10}>
+            <Grid item md={10}>
                 {data?.map(({ title, description1, description2, description3, subtitle }: DataProps) => (
                     <Box key={title} mb={2}>
                         {!!title && (

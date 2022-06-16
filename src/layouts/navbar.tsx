@@ -125,7 +125,7 @@ const Navbar: NextPage = () => {
         <AppBar position="static" className={classes.appbar} elevation={0}>
             <Toolbar className={classes.toolbar}>
                 <Grid container alignItems="center" justifyContent="space-between">
-                    <Grid item xs={6} md={2.5} className={classes.logo} onClick={onOpenMenu}>
+                    <Grid item xs={6} md={2.5} className={classes.logo} onClick={() => setOpen(false)}>
                         <Link href={"/"} passHref>
                             <Image src={Logo} alt="logo" width={200} height={50} />
                         </Link>
