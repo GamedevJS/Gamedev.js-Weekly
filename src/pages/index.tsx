@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { makeStyles } from "@mui/styles";
-import { Typography, Grid, Hidden, Divider, ListItem, List } from "@mui/material";
+import { Typography, Grid, Hidden, Divider, ListItem, Button, List } from "@mui/material";
 import { Theme } from "@mui/system";
 import { Fragment } from "react";
 import Form from "../components/form/form";
@@ -40,9 +40,20 @@ const useStyles = makeStyles((theme: Theme) => ({
         padding: "12px 0",
     },
     listItemLink: {
-        marginLeft: 5,
         color: theme.palette.secondary.light,
         cursor: "pointer",
+    },
+    issueBtn: {
+        marginTop: 25,
+        borderRadius: 25,
+        color: "#fff",
+        backgroundColor: theme.palette.secondary.light,
+        padding: "5px 30px",
+        borderColor: theme.palette.secondary.main,
+        alignSelf: "center",
+        [theme.breakpoints.down("sm")]: {
+            padding: "10px 50px",
+        },
     },
 }));
 
@@ -130,8 +141,8 @@ const Home: NextPage = () => {
                         <Image src={Img} alt={"email"} width={300} height={300} />
                     </Grid>
                 </Hidden>
-                <Grid xs={12}>
-                    <Typography variant="h4" marginTop={8} marginBottom={2}>
+                <Grid item xs={12} display="flex" flexDirection="column">
+                    <Typography variant="h4" marginTop={4} marginBottom={2}>
                         {"Gamedev.js Weekly newsletter archive"}
                     </Typography>
                     <Typography variant="subtitle1" marginBottom={2}>
@@ -142,15 +153,22 @@ const Home: NextPage = () => {
                         {emails.map(({ href, title, date }, id) => (
                             <Fragment key={id}>
                                 <ListItem className={classes.listItem}>
-                                    <Typography variant={"subtitle1"}>{`${date} -`}</Typography>
-                                    <Link href={href} passHref>
-                                        <span className={classes.listItemLink}>{title}</span>
-                                    </Link>
+                                    <Typography variant={"subtitle1"}>
+                                        {`${date} -`}{" "}
+                                        {
+                                            <Link href={href} passHref>
+                                                <span className={classes.listItemLink}>{title}</span>
+                                            </Link>
+                                        }
+                                    </Typography>
                                 </ListItem>
                                 <Divider classes={{ root: classes.divider }} />
                             </Fragment>
                         ))}
                     </List>
+                    <Button className={classes.issueBtn} variant="outlined">
+                        {"View all issues"}
+                    </Button>
                 </Grid>
             </Grid>
         </>
