@@ -1,13 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { makeStyles } from "@mui/styles";
-import { Typography, Grid, Hidden, Divider, ListItem, Button, List } from "@mui/material";
+import { Typography, Grid, Hidden } from "@mui/material";
 import { Theme } from "@mui/system";
-import { Fragment } from "react";
 import Form from "../components/form/form";
 import Image from "next/image";
 import Img from "../assets/images/email.jpeg";
-import Link from "next/link";
+import IssuesList from "../components/sections/issuesList";
 
 const useStyles = makeStyles((theme: Theme) => ({
     mainWrapper: {
@@ -33,82 +32,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         paddingLeft: 25,
         borderLeft: `2px solid ${theme.palette.secondary.main}`,
     },
-    divider: {
-        borderColor: theme.palette.secondary.light,
-    },
-    listItem: {
-        padding: "12px 0",
-    },
-    listItemLink: {
-        color: theme.palette.secondary.light,
-        cursor: "pointer",
-    },
-    issueBtn: {
-        marginTop: 25,
-        borderRadius: 25,
-        color: "#fff",
-        backgroundColor: theme.palette.secondary.light,
-        padding: "5px 30px",
-        borderColor: theme.palette.secondary.main,
-        alignSelf: "center",
-        [theme.breakpoints.down("sm")]: {
-            padding: "10px 50px",
-        },
-    },
 }));
-
-const emails = [
-    {
-        date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
-    },
-    {
-        date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
-    },
-    {
-        date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
-    },
-    {
-        date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
-    },
-    {
-        date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
-    },
-    {
-        date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
-    },
-    {
-        date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
-    },
-    {
-        date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
-    },
-    {
-        date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
-    },
-    {
-        date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
-    },
-];
 
 const Home: NextPage = () => {
     const classes = useStyles();
@@ -142,33 +66,7 @@ const Home: NextPage = () => {
                     </Grid>
                 </Hidden>
                 <Grid item xs={12} display="flex" flexDirection="column">
-                    <Typography variant="h4" marginTop={4} marginBottom={2}>
-                        {"Gamedev.js Weekly newsletter archive"}
-                    </Typography>
-                    <Typography variant="subtitle1" marginBottom={2}>
-                        {"Check out any of the recent 10 entries:"}
-                    </Typography>
-                    <List>
-                        <Divider classes={{ root: classes.divider }} />
-                        {emails.map(({ href, title, date }, id) => (
-                            <Fragment key={id}>
-                                <ListItem className={classes.listItem}>
-                                    <Typography variant={"subtitle1"}>
-                                        {`${date} -`}{" "}
-                                        {
-                                            <Link href={href} passHref>
-                                                <span className={classes.listItemLink}>{title}</span>
-                                            </Link>
-                                        }
-                                    </Typography>
-                                </ListItem>
-                                <Divider classes={{ root: classes.divider }} />
-                            </Fragment>
-                        ))}
-                    </List>
-                    <Button className={classes.issueBtn} variant="outlined">
-                        {"View all issues"}
-                    </Button>
+                    <IssuesList />
                 </Grid>
             </Grid>
         </>
