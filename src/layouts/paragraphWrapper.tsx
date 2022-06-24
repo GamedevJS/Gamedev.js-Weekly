@@ -19,9 +19,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         padding: "5px 60px",
         borderColor: "orange",
     },
-    title: {
-        fontWeight: "bold",
-    },
+    // title: {
+    //     fontWeight: "bold",
+    // },
     titleMargin: {
         marginBottom: 20,
     },
@@ -51,7 +51,7 @@ const Wrapper = ({ data, titlePage, children }: WrapperProps) => {
                     <Box key={title} mb={2}>
                         {!!title && (
                             <Typography
-                                className={clsx(classes.title, title === `${titlePage}` && classes.titleMargin)}
+                                className={clsx(title === `${titlePage}` && classes.titleMargin)}
                                 variant={title === `${titlePage}` ? "h5" : "h6"}>
                                 {title}
                             </Typography>

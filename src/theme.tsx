@@ -12,7 +12,19 @@ const theme = createTheme({
     },
     typography: {
         fontFamily: "Merriweather Sans, sans-serif",
+        htmlFontSize: 16,
+        fontSize: 16,
+        h4: {
+            fontWeight: 800,
+        },
+        h5: {
+            fontWeight: 800,
+        },
+        h6: {
+            fontWeight: 800,
+        },
     },
+
     components: {
         MuiCssBaseline: {
             styleOverrides: {
@@ -20,6 +32,21 @@ const theme = createTheme({
                     // fontSize: 10,
                     padding: 0,
                     margin: 0,
+                },
+            },
+        },
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 25,
+                    padding: "5px 30px",
+                },
+            },
+        },
+        MuiDivider: {
+            styleOverrides: {
+                root: {
+                    borderColor: "#92bcd8",
                 },
             },
         },

@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginRight: theme.spacing(5),
         color: "#000",
         cursor: "pointer",
+        fontWeight: 700,
     },
     menuItemsWrapper: {
         textAlign: "center",
@@ -50,27 +51,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     drawerPaper: {
         top: "10vh",
-        // backgroundColor: "#000",
         minHeight: "90vh",
-        // justifyContent: "space-around",
         alignItems: "start",
-        // opacity: 0,
-        // width: "100vw",
-        // width: "50vw",
-        // [theme.breakpoints.down("sm")]: {
-        //     width: "100vw",
         border: "none",
-        // [theme.breakpoints.down("md")]: {
-        //     height: "calc(90vh - 40px)",
-        // },
-        // },
     },
     modal: {
         backgroundColor: "none",
-        // zIndex: 200,
-    },
-    divider: {
-        borderColor: theme.palette.secondary.light,
     },
     mobileWrapperItems: {
         display: "flex",
@@ -158,9 +144,8 @@ const Navbar: NextPage = () => {
                                     paper: classes.drawerPaper,
                                     root: classes.modal,
                                 }}>
-                                <Divider classes={{ root: classes.divider }} />
                                 <List className={classes.mobileWrapperItems}>
-                                    <Divider classes={{ root: classes.divider }} />
+                                    <Divider />
                                     {menuItems.map(({ path, name }, id) => (
                                         <Fragment key={id}>
                                             <ListItem style={{ padding: "25px" }}>
@@ -176,7 +161,7 @@ const Navbar: NextPage = () => {
                                                     </span>
                                                 </Link>
                                             </ListItem>
-                                            <Divider classes={{ root: classes.divider }} />
+                                            <Divider />
                                         </Fragment>
                                     ))}
                                 </List>

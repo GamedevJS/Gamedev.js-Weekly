@@ -17,11 +17,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     subBtn: {
         marginLeft: 20,
-        borderRadius: 25,
-        // height: 36,
         backgroundColor: "yellow",
         textTransform: "capitalize",
-        padding: "0 30px",
         borderColor: "orange",
         // [theme.breakpoints.down("sm")]: {
         //     margin: "20px 0",

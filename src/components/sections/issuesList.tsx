@@ -9,9 +9,6 @@ const useStyles = makeStyles((theme: Theme) => ({
         backgroundColor: theme.palette.secondary.light,
         padding: "30px 0 70px 0",
     },
-    divider: {
-        borderColor: theme.palette.secondary.light,
-    },
     listItem: {
         padding: "12px 0",
     },
@@ -21,10 +18,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     issueBtn: {
         marginTop: 25,
-        borderRadius: 25,
+        // borderRadius: 25,
         color: "#fff",
         backgroundColor: theme.palette.secondary.light,
-        padding: "5px 30px",
+        // padding: "5px 30px",
         borderColor: theme.palette.secondary.main,
         alignSelf: "center",
         [theme.breakpoints.down("sm")]: {
@@ -98,7 +95,7 @@ const IssuesList = () => {
                 {"Check out any of the recent 10 entries:"}
             </Typography>
             <List>
-                <Divider classes={{ root: classes.divider }} />
+                <Divider />
                 {emails.map(({ href, title, date }, id) => (
                     <Fragment key={id}>
                         <ListItem className={classes.listItem}>
@@ -111,7 +108,7 @@ const IssuesList = () => {
                                 }
                             </Typography>
                         </ListItem>
-                        <Divider classes={{ root: classes.divider }} />
+                        <Divider />
                     </Fragment>
                 ))}
             </List>
