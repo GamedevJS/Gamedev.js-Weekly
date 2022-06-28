@@ -7,23 +7,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     formContainer: {
         display: "flex",
         marginTop: theme.spacing(2),
-        // [theme.breakpoints.down("sm")]: {
-        //     flexDirection: "column",
-        //     // justifyContent: "center",
-        //     backgroundColor: "red",
-        //     width: " 100vw",
-        //     // alignItems: "center",
-        // },
     },
     subBtn: {
         marginLeft: 20,
-        backgroundColor: "yellow",
         textTransform: "capitalize",
-        borderColor: "orange",
-        // [theme.breakpoints.down("sm")]: {
-        //     margin: "20px 0",
-        //     padding: "10px 0",
-        // },
     },
 }));
 
@@ -49,7 +36,6 @@ const Form = ({ width, label, borderColor, labelColor }: formProps) => {
     };
 
     return (
-        // <Box>
         <Grid
             container
             item
@@ -65,12 +51,9 @@ const Form = ({ width, label, borderColor, labelColor }: formProps) => {
                 disableUnderline
                 size="medium"
                 onChange={handleEmail}
-                // style={{ width: `${width}` }}
                 sx={{
                     input: {
                         backgroundColor: "#fff",
-                        // borderRadius: 1,
-
                         border: `1px solid ${borderColor}`,
                         padding: 1.5,
                         fontSize: 10,
@@ -78,11 +61,10 @@ const Form = ({ width, label, borderColor, labelColor }: formProps) => {
                     },
                 }}
             />
-            <Button className={classes.subBtn} onClick={sentEmail} variant="outlined">
+            <Button className={classes.subBtn} onClick={sentEmail} variant="outlined" color="primary">
                 {"Subscribe"}
             </Button>
         </Grid>
-        // {/* </Box> */}
     );
 };
 

@@ -18,11 +18,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     issueBtn: {
         marginTop: 25,
-        // borderRadius: 25,
-        color: "#fff",
-        backgroundColor: theme.palette.secondary.light,
-        // padding: "5px 30px",
-        borderColor: theme.palette.secondary.main,
         alignSelf: "center",
         [theme.breakpoints.down("sm")]: {
             padding: "10px 50px",
@@ -112,7 +107,7 @@ const IssuesList = () => {
                     </Fragment>
                 ))}
             </List>
-            <Button className={classes.issueBtn} variant="outlined">
+            <Button className={classes.issueBtn} variant="outlined" color="secondary">
                 {"View all issues"}
             </Button>
         </>
