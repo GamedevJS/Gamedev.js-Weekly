@@ -108,7 +108,7 @@ const IssuesList = () => {
                 ))}
             </List>
             <Button className={classes.issueBtn} variant="outlined" color="secondary">
-                {"View all issues"}
+                {"view all issues"}
             </Button>
         </>
     );

@@ -51,6 +51,7 @@ const theme = {
                 root: {
                     borderRadius: 25,
                     padding: "5px 30px",
+                    textTransform: "capitalize",
                     "&:hover": {
                         background: "transparent",
                         backgroundColor: "transparent",

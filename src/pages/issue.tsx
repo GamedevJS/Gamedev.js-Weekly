@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme: Theme) => ({
         backgroundImage: `url("/patterns/pattern.png")`,
         paddingLeft: theme.spacing(30),
         textTransform: "uppercase",
-
         [theme.breakpoints.down("sm")]: {
             height: "35vh",
             padding: "10vh 50px 0 50px",
@@ -33,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         margin: "10px 15%",
         width: "auto",
         [theme.breakpoints.down("sm")]: {
-            paddingTop: "10vh",
+            margin: "25px 5%",
         },
     },
     linkItem: {
@@ -44,6 +43,11 @@ const useStyles = makeStyles((theme: Theme) => ({
         margin: "25px 0 ",
         paddingLeft: 25,
         borderLeft: `2px solid ${theme.palette.secondary.main}`,
+    },
+    titleWrapper: {
+        [theme.breakpoints.down("sm")]: {
+            marginBottom: 15,
+        },
     },
     smallWrapper: {
         margin: "15px 0",
@@ -155,7 +159,7 @@ const Issue: NextPage = () => {
             <Grid container className={classes.mainWrapper}>
                 {issue.map(({ title, date, articles, jobs, tutorials, competitions, demos, videos, games }, id) => (
                     <Fragment key={id}>
-                        <Grid item xs={12}>
+                        <Grid item xs={12} className={classes.titleWrapper}>
                             <Typography variant="body2">
                                 <Link href={"/"} passHref>
                                     <span className={classes.linkItem}>{"Home"}</span>
@@ -261,7 +265,7 @@ const Issue: NextPage = () => {
                             ))}
                         {!!videos && (
                             <Typography variant="h5" sx={{ marginTop: 5 }}>
-                                {"Demos:"}
+                                {"Videos:"}
                             </Typography>
                         )}
                         {!!videos &&
@@ -276,7 +280,7 @@ const Issue: NextPage = () => {
                             ))}
                         {!!games && (
                             <Typography variant="h5" sx={{ marginTop: 5 }}>
-                                {"Demos:"}
+                                {"Games:"}
                             </Typography>
                         )}
                         {!!games &&

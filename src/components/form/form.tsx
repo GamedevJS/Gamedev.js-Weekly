@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     subBtn: {
         marginLeft: 20,
-        textTransform: "capitalize",
+        // textTransform: "capitalize",
     },
 }));
 
