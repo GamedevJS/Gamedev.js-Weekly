@@ -52,6 +52,7 @@ const theme = {
                     borderRadius: 25,
                     padding: "5px 30px",
                     textTransform: "capitalize",
+                    color: "#fff",
                     "&:hover": {
                         background: "transparent",
                         backgroundColor: "transparent",
@@ -75,7 +76,6 @@ const theme = {
                     style: {
                         background: defaultTheme.palette.secondary.light,
                         borderColor: defaultTheme.palette.secondary.main,
-                        color: "#fff",
                         "&:hover": {
                             background: defaultTheme.palette.secondary.light,
                             borderColor: defaultTheme.palette.secondary.main,

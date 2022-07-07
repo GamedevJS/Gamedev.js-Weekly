@@ -3,6 +3,7 @@ import Head from "next/head";
 import { makeStyles } from "@mui/styles";
 import { Typography, Grid, Hidden } from "@mui/material";
 import { Theme } from "@mui/system";
+import { useMobileVisible } from "../hooks/useMobileVisible";
 import Form from "../components/form/form";
 import Image from "next/image";
 import Img from "../assets/images/email.jpeg";
@@ -22,10 +23,6 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        // "& :nth-child(3)": {
-        //     backgroundColor: "green",
-        //     width: "100%",
-        // },
     },
     description: {
         margin: "25px 0",
@@ -36,6 +33,8 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const Home: NextPage = () => {
     const classes = useStyles();
+
+    const isMobileVisible = useMobileVisible();
 
     return (
         <>
@@ -52,7 +51,13 @@ const Home: NextPage = () => {
                             "Subscripe to the weekly, free newsletter all about HTML5 Game Development, sent every Friday. Join over 7000 gamedev subscribers. No spam, open for related sponsorship opportunities and job listings."
                         }
                     </Typography>
-                    <Form label={"sample@email.com"} width={"75%"} borderColor={"orange"} labelColor={"#000"} />
+                    <Form
+                        label={"sample@email.com"}
+                        width={isMobileVisible ? "100vw" : "75%"}
+                        formOnTheTop
+                        borderColor={isMobileVisible ? "#93bcd8" : "#ff9900"}
+                        labelColor={"#000"}
+                    />
                 </Grid>
                 <Hidden mdDown>
                     <Grid
