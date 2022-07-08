@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         [theme.breakpoints.down("sm")]: {
             backgroundColor: theme.palette.secondary.light,
             padding: "50px 0",
+            width: "100vw",
         },
     },
     inputForm: {

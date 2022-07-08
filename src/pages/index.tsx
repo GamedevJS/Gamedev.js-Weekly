@@ -53,7 +53,7 @@ const Home: NextPage = () => {
                     </Typography>
                     <Form
                         label={"sample@email.com"}
-                        width={isMobileVisible ? "100vw" : "75%"}
+                        width={"75%"}
                         formOnTheTop
                         borderColor={isMobileVisible ? "#93bcd8" : "#ff9900"}
                         labelColor={"#000"}

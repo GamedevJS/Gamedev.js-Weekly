@@ -29,52 +29,52 @@ const emails = [
     {
         date: "21/01/2022",
         title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
+        id: "420",
     },
     {
         date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
+        title: "Issue #421 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
+        id: "421",
     },
     {
         date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
+        title: "Issue #422 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
+        id: "422",
     },
     {
         date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
+        title: "Issue #423 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
+        id: "423",
     },
     {
         date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
+        title: "Issue #424 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
+        id: "424",
     },
     {
         date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
+        title: "Issue #425 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
+        id: "425",
     },
     {
         date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
+        title: "Issue #426 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
+        id: "426",
     },
     {
         date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
+        title: "Issue #427 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
+        id: "427",
     },
     {
         date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
+        title: "Issue #428 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
+        id: "428",
     },
     {
         date: "21/01/2022",
-        title: "Issue #420 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
-        href: "/#420",
+        title: "Issue #429 Web GameDev Summit, Make JavaScript Games, and Vampires Survivors",
+        id: "429",
     },
 ];
 
@@ -91,13 +91,13 @@ const IssuesList = () => {
             </Typography>
             <List>
                 <Divider />
-                {emails.map(({ href, title, date }, id) => (
-                    <Fragment key={id}>
+                {emails.map(({ id, title, date }, index) => (
+                    <Fragment key={index}>
                         <ListItem className={classes.listItem}>
                             <Typography variant={"subtitle1"}>
                                 {`${date} -`}{" "}
                                 {
-                                    <Link href={href} passHref>
+                                    <Link href={`issue/${id}`} passHref>
                                         <span className={classes.listItemLink}>{title}</span>
                                     </Link>
                                 }
