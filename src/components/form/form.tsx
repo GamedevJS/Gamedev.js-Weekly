@@ -58,7 +58,7 @@ const Form = ({ width, label, borderColor, labelColor, formOnTheTop }: formProps
     const classes = useStyles();
     const [email, setEmail] = useState("");
 
-    // const isMobileVisible = useMobileVisible();
+    const isMobileVisible = useMobileVisible();
 
     const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
@@ -76,7 +76,7 @@ const Form = ({ width, label, borderColor, labelColor, formOnTheTop }: formProps
             item
             wrap={"nowrap"}
             className={clsx(classes.formContainer, formOnTheTop && classes.mobileFormTop)}
-            style={{ width: `${width}` }}>
+            style={{ width: isMobileVisible ? "100vw" : `${width}` }}>
             <Input
                 placeholder={label}
                 value={email}

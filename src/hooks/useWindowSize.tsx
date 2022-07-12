@@ -20,8 +20,8 @@ export function useWindowSize() {
         setWindowSize(getSize());
     }
     useEffect(() => {
-        handleResize();
         window.addEventListener("resize", handleResize);
+        handleResize();
         return () => {
             window.removeEventListener("resize", handleResize);
         };

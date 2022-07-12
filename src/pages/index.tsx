@@ -35,6 +35,7 @@ const Home: NextPage = () => {
     const classes = useStyles();
 
     const isMobileVisible = useMobileVisible();
+    // const isMobile = window.innerWidth <= 600;
 
     return (
         <>
